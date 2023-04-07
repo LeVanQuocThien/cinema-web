@@ -1,0 +1,20 @@
+.ticket {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px;
+    .count {
+        padding: 2px 6px;
+        display: flex;
+        align-items: center;
+        .num {
+            font-size: 20px;
+            font-weight: bold;
+            color: salmon;
+        }
+    }
+    .name {
+        padding: 0 10px;
+        flex: 1;
+    }
+}

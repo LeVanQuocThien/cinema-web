@@ -1,0 +1,25 @@
+.seat {
+    padding: 0 20px;
+    // max-width: 60%;
+    .screen {
+        padding: 12px;
+        color: #f3e5ca;
+        margin-top: 10px;
+        border: 6px solid black;
+        border-bottom: none;
+        border-radius: 100%;
+        text-align: center;
+        box-shadow: 0 -5px 4px 0 white;
+    }
+    .seatWrapper {
+        padding: 30px;
+        .standardSeat {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .row {
+            height: 30px;
+            display: flex;
+        }
+    }
+}

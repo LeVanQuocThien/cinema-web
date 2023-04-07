@@ -1,0 +1,46 @@
+.combo {
+    padding: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .numOfCombo {
+        padding: 2px 6px;
+        width: 44px;
+        border-radius: 4px;
+        border: 1px solid plum;
+        position: relative;
+        p {
+            width: 100%;
+            padding: 4px 0;
+            background: transparent;
+            color: white;
+            text-align: center;
+        }
+        .descrease,
+        .inscrease {
+            position: absolute;
+            line-height: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .descrease {
+            bottom: -32%;
+        }
+        .inscrease {
+            top: -30%;
+        }
+    }
+    .comboDetail {
+        padding: 0 10px;
+        flex: 1;
+
+        h3 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: plum;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+}

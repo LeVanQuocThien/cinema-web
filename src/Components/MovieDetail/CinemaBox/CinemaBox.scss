@@ -1,0 +1,13 @@
+.cinemaBox {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    .cinemaName {
+        padding-bottom: 20px;
+        border-bottom: 2px solid salmon;
+    }
+    .timeBox {
+        padding: 20px 20px 0 20px;
+    }
+}

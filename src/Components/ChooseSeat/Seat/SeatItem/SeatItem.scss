@@ -1,0 +1,68 @@
+.seatItem {
+    width: calc(100% / 27);
+    padding: 2px;
+    display: flex;
+    .exist {
+        position: relative;
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        button {
+            color: white;
+            &:hover {
+                color: palevioletred;
+            }
+            &:hover .seatCode {
+                display: block;
+            }
+        }
+        button[disabled] {
+            // pointer-events: none;
+            color: red;
+            .seatCode {
+                display: none;
+            }
+            &:hover {
+                cursor: no-drop;
+            }
+        }
+        .iconChair {
+            font-size: 32px;
+        }
+        .show {
+            color: black;
+            .seatCode {
+                display: block;
+            }
+        }
+        // .disabled {
+        //     color: red;
+        //     cursor: no-drop;
+        //     .seatCode {
+        //         display: none;
+        //     }
+        // }
+    }
+    .seatCode {
+        position: absolute;
+        display: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+    }
+}
+.couple {
+    &:nth-of-type(2n) {
+        .exist {
+            display: none;
+        }
+    }
+    &:nth-of-type(2n + 1) {
+        .iconChair {
+            transform: scaleX(2);
+        }
+    }
+}

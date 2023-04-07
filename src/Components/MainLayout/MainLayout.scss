@@ -1,0 +1,14 @@
+.mainLayout {
+    .container {
+        height: 90vh;
+        display: flex;
+        .content {
+            flex: 1;
+            padding: 0 5px;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+}

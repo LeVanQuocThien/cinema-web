@@ -1,0 +1,33 @@
+.ticketCombo {
+    width: 28%;
+    padding: 0 16px;
+    .cinemaName {
+        text-align: center;
+        color: #f3e5ca;
+        margin-bottom: 12px;
+    }
+    .wrapper {
+        border-left: 2px solid salmon;
+    }
+    .comboWrapper {
+        padding-top: 20px;
+    }
+    .pay {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 16px 0 16px;
+        .total {
+            color: salmon;
+            font-size: 32px;
+        }
+        .btnBuy {
+            font-size: 16px;
+            color: white;
+            font-weight: bolder;
+            padding: 12px 24px;
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+    }
+}

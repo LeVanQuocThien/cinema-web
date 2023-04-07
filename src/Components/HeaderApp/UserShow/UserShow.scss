@@ -1,0 +1,107 @@
+.userShow {
+    width: 20%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        white-space: nowrap;
+    }
+    .ticketList {
+        position: relative;
+        padding: 0 14px;
+        margin: 0 8px;
+        height: 16px;
+        border-left: 1px dashed salmon;
+        border-right: 1px dashed salmon;
+        &:hover .more {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+    }
+    .avatar {
+        position: relative;
+        width: 24%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: default;
+        .imgAvatar {
+            width: 40px;
+            height: 40px;
+            margin-left: 4px;
+            border-radius: 100%;
+            background: salmon;
+        }
+
+        &:hover .more {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+    }
+    .more {
+        top: 100%;
+        right: -8px;
+        padding-top: 12px;
+        position: absolute;
+        z-index: 200;
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+        transition: 0.2s linear all;
+        .moreContain {
+            color: black;
+            font-weight: bold;
+            padding: 8px 0;
+            list-style: none;
+            background: rgb(239, 229, 229);
+            border-radius: 12px;
+            box-shadow: 0 0 4px 0 white;
+            li {
+                position: relative;
+                padding: 10px 16px;
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.5;
+                }
+                .title {
+                    display: flex;
+                    align-items: center;
+                    .icon {
+                        font-size: 22px;
+                    }
+                    span {
+                        margin-left: 8px;
+                    }
+                }
+            }
+            .logOut {
+                margin-top: 4px;
+                padding-top: 8px;
+                border-top: 1px solid salmon;
+                text-align: center;
+                button {
+                    padding: 4px;
+                    font-size: 20px;
+                    // font-weight: bold;
+                    color: salmon;
+                    background: transparent;
+                    transition: 0.2s linear all;
+                    &:hover {
+                        transform: scale(1.1);
+                        color: rgb(181, 69, 57);
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

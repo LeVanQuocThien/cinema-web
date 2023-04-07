@@ -1,0 +1,49 @@
+.ticketDetail {
+    border: 2px solid salmon;
+    border-radius: 16px;
+    box-shadow: 0 0 4px 0 salmon;
+    padding: 20px;
+    color: black;
+    background: white;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+            color: salmon;
+        }
+    }
+    .containerDetail {
+        padding: 16px 0;
+        margin: 12px 0;
+        border-top: 2px solid lightgray;
+        border-bottom: 2px solid lightgray;
+        .detail {
+            display: flex;
+            justify-content: space-between;
+            .wrapper {
+                margin: 10px 0;
+                h3 {
+                    color: plum;
+                    font-size: 24px;
+                }
+                p {
+                    font-weight: lighter;
+                    font-size: 18px;
+                    padding: 6px;
+                }
+                .dateAndTime {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    .customer {
+        text-align: center;
+        font-style: italic;
+        font-weight: lighter;
+    }
+}

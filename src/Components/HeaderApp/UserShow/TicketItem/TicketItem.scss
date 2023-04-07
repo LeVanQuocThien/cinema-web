@@ -1,0 +1,22 @@
+.ticketItem {
+    color: gray;
+    padding-bottom: 12px;
+    border-bottom: 2px dashed salmon;
+    .filmName {
+        color: black;
+        white-space: nowrap;
+        overflow: auto;
+        text-overflow: ellipsis;
+    }
+    .cinemaName {
+        margin: 4px 0;
+    }
+    .showTime {
+        padding: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid purple;
+        border-radius: 8px;
+    }
+}

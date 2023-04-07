@@ -1,0 +1,125 @@
+.home {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    .category {
+        text-align: center;
+        button {
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: transparent;
+            position: relative;
+            transition: 0.3s linear all;
+            &::before {
+                content: "";
+                width: 0;
+                height: 2px;
+                background: salmon;
+                bottom: 0px;
+                left: 0;
+                position: absolute;
+                transition: 0.2s linear all;
+            }
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+                text-shadow: 0 0 15px white;
+            }
+        }
+        .active {
+            &::before {
+                width: 100%;
+            }
+            text-shadow: 0 0 15px white;
+        }
+    }
+    .movieSelected {
+        width: 100%;
+        position: relative;
+        margin-top: 8px;
+        height: 54vh;
+        .banner {
+            position: absolute;
+            inset: 0;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            transition: 0.4s linear all;
+        }
+        .shortInfoWrap {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            background: rgba($color: #000000, $alpha: 0.7);
+            .shortInfo {
+                padding: 30px;
+                width: 80%;
+                h1 {
+                    font-size: 40px;
+                    width: 80%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                p {
+                    margin: 12px 0;
+                    line-height: 24px;
+                    font-size: 20px;
+                    height: 48px;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    -webkit-line-clamp: 2;
+                    text-overflow: ellipsis;
+                }
+                .actionWrap {
+                    margin-top: 30px;
+                    .trailer,
+                    .bookTicket {
+                        font-size: 20px;
+                        padding: 8px 12px;
+                        color: white;
+                        font-weight: bold;
+                        border-radius: 4px;
+                    }
+                    .trailer {
+                        background: salmon;
+                    }
+                    .bookTicket {
+                        background: #473c8b;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .listMovie {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 10px;
+        display: flex;
+        max-width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        z-index: 2;
+        &::-webkit-scrollbar {
+            width: auto;
+            height: 8px;
+        }
+        // &::-webkit-scrollbar-track {
+        //     background: transparent;
+        //     border-radius: 20px;
+        //     box-shadow: 0 0 4px 2px salmon;
+        // }
+        &::-webkit-scrollbar-thumb {
+            background: salmon;
+            border-radius: 20px;
+        }
+    }
+}

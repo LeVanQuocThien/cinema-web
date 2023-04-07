@@ -1,0 +1,28 @@
+.lsShowTime {
+    .itemList {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        h3 {
+            margin-right: 16px;
+        }
+        .timeList {
+            display: flex;
+            flex-wrap: wrap;
+            .time {
+                padding: 10px 8px;
+                cursor: pointer;
+                text-decoration: none;
+                &:hover {
+                    opacity: 0.6;
+                }
+                span {
+                    padding: 4px 8px;
+                    background: white;
+                    color: black;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}

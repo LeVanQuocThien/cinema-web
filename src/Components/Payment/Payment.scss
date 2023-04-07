@@ -1,0 +1,199 @@
+.payment {
+    position: absolute;
+    padding: 0 10px;
+    inset: 0;
+    background: rgba($color: #000000, $alpha: 0.95);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .containPayment {
+        width: 36%;
+        padding: 20px;
+        border: 2px solid salmon;
+        border-radius: 12px;
+        box-shadow: 0 0 4px 0 salmon;
+        h1 {
+            padding: 20px;
+            text-align: center;
+        }
+        .bannerBill {
+            .img {
+                padding-top: 50%;
+                background-size: 100%;
+                background-position: center;
+                border-radius: 10px;
+            }
+        }
+        .infoBill {
+            display: flex;
+            flex-wrap: wrap;
+            h2 {
+                margin-top: 12px;
+            }
+            .full {
+                width: 100%;
+            }
+            .half {
+                width: 50%;
+            }
+            .group {
+                padding: 10px 10px 10px 0;
+                font-size: 17px;
+                p {
+                    padding: 4px;
+                    span {
+                        margin-left: 16px;
+                    }
+                }
+            }
+        }
+        .footerBill {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .totalBill {
+                padding: 10px;
+                font-size: 20px;
+                text-align: end;
+                span {
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: salmon;
+                }
+            }
+            button {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                font-weight: bold;
+                padding: 6px;
+                color: rgba($color: #fff, $alpha: 0.5);
+                .icon {
+                    font-size: 28px;
+                }
+                span {
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+    .vouchers,
+    .chooseBankCard {
+        width: 26%;
+        min-height: 60%;
+        color: #3c2d2d;
+        background: rgb(169, 162, 155);
+        border-radius: 12px;
+        box-shadow: 0 0 8px 0 white;
+        padding: 16px;
+        h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+    }
+    .chooseBankCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .methodWrapper {
+            flex: 1;
+            padding: 12px 0;
+            .methodBox {
+                .titleMethod {
+                    margin: 12px 0;
+                    font-size: 18px;
+                    font-style: italic;
+                    font-weight: bold;
+                }
+                .cardList {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    .activeCard {
+                        background: white;
+                    }
+                    .cardItem {
+                        cursor: pointer;
+                        width: 48%;
+                        margin-bottom: 10px;
+                        padding: 6px;
+                        border: 1px solid rgb(89, 60, 5);
+                        border-radius: 6px;
+                    }
+                    .alert {
+                        text-align: center;
+                        font-size: 24px;
+                        color: rgb(131, 31, 20);
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+
+        .payForTicket {
+            padding: 4px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            .button {
+                font-size: 20px;
+                font-weight: bold;
+                padding: 6px 12px;
+                background: white;
+                border-radius: 8px;
+            }
+            .newCard {
+                position: absolute;
+                right: 50%;
+                transform: translateX(50%);
+                bottom: 70%;
+                width: 100%;
+                background: white;
+                padding: 16px;
+                border-radius: 10px;
+                box-shadow: 0 0 16px 0 salmon;
+                .close {
+                    position: absolute;
+                    font-size: 20px;
+                    font-weight: bolder;
+                    top: 8px;
+                    right: 10px;
+                }
+                h1 {
+                    text-align: center;
+                    margin-top: 16px;
+                }
+                .inputWrapper {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding: 20px;
+                    .w46 {
+                        width: 46%;
+                    }
+                    .w100 {
+                        width: 100%;
+                    }
+                    input {
+                        margin: 10px 0;
+                        padding: 10px;
+                        font-size: 18px;
+                        border: 1px solid black;
+                        border-radius: 6px;
+                    }
+                }
+                .btnAdd {
+                    padding: 10px;
+                    text-align: center;
+                    button {
+                        padding: 10px 20px;
+                        border-radius: 60px;
+                        background: salmon;
+                        color: white;
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

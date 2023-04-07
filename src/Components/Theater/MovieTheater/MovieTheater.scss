@@ -1,0 +1,71 @@
+.movieTheater {
+    padding: 16px;
+    margin-bottom: 16px;
+    // border: 1px solid salmon;
+    background: rgba($color: #000000, $alpha: 0.3);
+    box-shadow: 0 0 6px 0 currentColor;
+    border-radius: 12px;
+    display: flex;
+    .imgBanner {
+        min-width: 20%;
+        .imgB {
+            width: 100%;
+            padding-top: 150%;
+            background: salmon;
+            border-radius: 6px;
+            background-size: 110%;
+            background-position: center;
+        }
+    }
+    .info {
+        width: 80%;
+        padding-left: 24px;
+        .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            .nameWrapper {
+                width: 80%;
+                h2 {
+                    width: 100%;
+                    padding: 4px 10px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                .subName {
+                    opacity: 0.5;
+                }
+            }
+        }
+        .description {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
+        .showTimeWrap {
+            margin-top: 24px;
+            h2 {
+                text-align: center;
+                margin-top: 8px;
+                padding: 8px 0;
+                border-top: 1px solid lightgray;
+            }
+            .showTime {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .selectTime {
+                    // padding: 20px;
+                    width: 200px;
+                    select {
+                        width: 100%;
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

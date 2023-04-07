@@ -1,0 +1,26 @@
+.theater {
+    height: 100%;
+    .nameAndTime {
+        height: 80px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .selectTime {
+            width: 33.3333%;
+            padding: 16px;
+            select {
+                width: 100%;
+                padding: 8px;
+            }
+        }
+    }
+    .movieList {
+        height: calc(100% - 80px);
+        padding: 5px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}

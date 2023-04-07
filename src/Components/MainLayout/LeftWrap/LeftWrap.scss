@@ -1,0 +1,84 @@
+.leftWrap {
+    width: 20%;
+    h1 {
+        height: 52px;
+        text-align: center;
+        text-shadow: 0 0 5px white;
+    }
+    .trendWrap {
+        height: 100%;
+        padding: 0px 20px 20px;
+        .listTrend {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            perspective: 100px;
+            .previous,
+            .next {
+                display: flex;
+                padding: 4px;
+                background: white;
+                position: absolute;
+                border-radius: 100%;
+                box-shadow: 0 0 6px 0 white;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 5;
+                opacity: 0.76;
+                cursor: pointer;
+                .icon {
+                    margin: auto;
+                    font-size: 44px;
+                    color: black;
+                }
+            }
+            .previous {
+                top: 8px;
+            }
+            .next {
+                bottom: 8px;
+            }
+            .itemSwipe {
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                padding: 6px;
+                transition: all 0.7s ease;
+            }
+            .item1 {
+                transform: translate3d(0, -50%, 0);
+                z-index: 3;
+                filter: blur(0);
+                opacity: 1;
+                &:hover {
+                    transform: translate3d(0, -50%, 0) scale(1.1);
+                    cursor: pointer;
+                }
+            }
+            .item2 {
+                transform: translate3d(0, -22%, -10px);
+                z-index: 2;
+                filter: blur(2px);
+                opacity: 0.9;
+            }
+            .item3 {
+                transform: translate3d(0, -4%, -20px);
+                z-index: 1;
+                filter: blur(4px);
+                opacity: 0.5;
+            }
+            .item4 {
+                transform: translate3d(0, -96%, -20px);
+                z-index: 1;
+                filter: blur(4px);
+                opacity: 0.5;
+            }
+            .item5 {
+                transform: translate3d(0, -78%, -10px);
+                z-index: 2;
+                filter: blur(2px);
+                opacity: 0.9;
+            }
+        }
+    }
+}
