@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import Combo from './Combo/Combo'
@@ -6,19 +6,24 @@ import Ticket from './Ticket/Ticket'
 import './TicketCombo.scss'
 
 export default function TicketCombo({ ticket, consession }) {
-    const ticketManage = useSelector(state => state.ticketManage)
     const nav = useNavigate()
     const { timeShowID } = useParams()
+    const ticketManage = useSelector(state => state.ticketManage)
+    const seatLs = useSelector(state => state.ticketManage.seatLs)
     const isMember = useSelector(state => state.userManage.currentUser?.Role === '1')
 
+    //========= Check the seatLs is not blank =============
+    const isMoreOneSeat = useMemo(() => Object.values(seatLs).some(e => e.length > 0), [seatLs])
+
     const HandleClickBuy = () => {
-        let isSeat = Object.values(ticketManage.seatLs).some(e => e.length > 0)
+        let isSeat = Object.values(seatLs).some(e => e.length > 0)
         if (isSeat) {
             nav(`/chooseseat/${timeShowID}/payment`)
         } else { alert('chon ve cmm de') }
     }
     return (
         <div className='ticketCombo'>
+            {console.log(isMoreOneSeat)}
             <h2 className='cinemaName'>{ticketManage.cinemaName}</h2>
             <div className='wrapper'>
                 <div className='priceWrapper'>
@@ -39,7 +44,8 @@ export default function TicketCombo({ ticket, consession }) {
                 </div>
                 <div className='pay'>
                     <h3 className='total'>{ticketManage.totalPrice}</h3>
-                    <button onClick={HandleClickBuy} className='btnBuy'>Buy ticket</button>
+                    <button disabled={!isMoreOneSeat} onClick={HandleClickBuy} className='btnBuy'>Buy ticket</button>
+                    {!isMoreOneSeat && <span className='messBtn'>You haven't chosen any seat</span>}
                 </div>
             </div>
         </div>

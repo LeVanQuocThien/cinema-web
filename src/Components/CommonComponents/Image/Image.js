@@ -20,3 +20,5 @@ export const ScanCode = ({ width, height }) => {
         />
     )
 }
+
+

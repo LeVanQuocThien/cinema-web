@@ -42,12 +42,20 @@ export default function UserShow() {
         <div className='userShow'>
             <p>Hi, {userInfo?.Name}!</p>
             <div className='ticketList'>
-                <FaTicketAlt />
+                <FaTicketAlt className='icon' />
+                <div className='TicketCounter'>{ticketLs.length}</div>
                 <div className='more'>
                     <ul className='moreContain'>
-                        {ticketLs.map((e, i) => {
-                            return <li key={i}><TicketItem {...e} /></li>
-                        })}
+                        {!ticketLs.length ?
+                            <li className='blankCart'>
+                                <img width={200} height={100} src='https://www.svgrepo.com/show/107360/movie-tickets.svg' alt='' />
+                                <p>You have no ticket.</p>
+                            </li>
+                            :
+                            ticketLs.map((e, i) => {
+                                return <li key={i}><TicketItem {...e} /></li>
+                            })
+                        }
                     </ul>
                 </div>
             </div>

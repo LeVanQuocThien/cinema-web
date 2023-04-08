@@ -92,9 +92,9 @@ export default function Theater() {
                         </select>
                     </div>
                 </div>
-                <div className='movieList'>
+                {!!movieLs.length && <div className='movieList'>
                     {movieLs.map((e, i) => <MovieTheater key={i} {...e} sess={dateValue} />)}
-                </div>
+                </div>}
             </div>
         </MainLayout>
     )

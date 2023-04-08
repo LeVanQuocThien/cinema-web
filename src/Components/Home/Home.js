@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import clsx from 'clsx'
+import { BsFillPlayFill } from 'react-icons/bs'
 
+import clsx from 'clsx'
 import { formatText } from '../../CommonFunction/common'
 import MainLayout from '../MainLayout/MainLayout'
 import './Home.scss'
@@ -25,7 +26,7 @@ export default function Home() {
         dispatch({ type: 'SET_MOVIE_DETAIL', payload: e })
         setIsActive(e.id)
     }
-    const HandleBook = () => {
+    const HandleClickBuy = () => {
         dispatch({ type: 'RESET_MOVIE_DETAIL' })
         nav('/movie/' + banner.id)
     }
@@ -40,7 +41,7 @@ export default function Home() {
 
     return (
         <MainLayout>
-            <div className='home'>
+            {movieList.movieShowing.length && <div className='home'>
                 {/* ====== Change category ===== */}
                 <div className='category'>
                     <button
@@ -56,7 +57,7 @@ export default function Home() {
                         Coming soon
                     </button>
                 </div>
-
+                {/* ======== Show banner selected ======== */}
                 <div className='movieSelected'>
                     <div
                         style={banner?.imageLandscape ? { backgroundImage: `url(${banner.imageLandscape})` } : {}}
@@ -72,15 +73,16 @@ export default function Home() {
                                 <button className='trailer'
                                     onClick={() => dispatch({ type: 'SET_SCREEN', payload: 'trailer' })}
                                 >
-                                    Trailer
+                                    <BsFillPlayFill />
                                 </button>
-                                <button className='bookTicket' onClick={HandleBook}>
+                                <button className='bookTicket' onClick={HandleClickBuy}>
                                     Buy ticket
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* ========= All movie slide ========== */}
                 <div className='listMovie'>
                     {showList.map((e, i) => {
                         return <MovieItem
@@ -91,7 +93,7 @@ export default function Home() {
                         />
                     })}
                 </div>
-            </div>
+            </div>}
         </MainLayout>
     )
 }

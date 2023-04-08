@@ -1,6 +1,6 @@
 .register {
-    width: 32%;
-    height: 82%;
+    width: 32vw;
+    height: 82vh;
     border: 2px solid whitesmoke;
     border-radius: 12px;
     background: black;
@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    animation: ZoomOut 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     h1 {
         font-size: 44px;
         text-align: center;

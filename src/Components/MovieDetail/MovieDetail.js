@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { formatText } from '../../CommonFunction/common'
 import MainLayout from '../MainLayout/MainLayout'
 import { FaChevronDown } from 'react-icons/fa'
+import { BsFillPlayFill } from 'react-icons/bs'
 import './MovieDetail.scss'
 import CinemaBox from './CinemaBox/CinemaBox'
 
@@ -68,13 +69,17 @@ export default function MovieDetail() {
                     <div className='movieInfo'>
                         <div className='movieBanner'>
                             <div className='banner' style={{ backgroundImage: `url(${movieDataDetail.imagePortrait})` }}></div>
-                            <div className='btnTrailer'></div>
+                            <div className='btnTrailer' onClick={() => dispatch({ type: 'SET_SCREEN', payload: 'trailer' })}>
+                                <BsFillPlayFill />
+                            </div>
                         </div>
                         <div className='info'>
                             <h1 className='name'>{movieDataDetail.name}</h1>
                             <h1 className='subName'>{movieDataDetail.subName}</h1>
-                            <p>rating: 8.0/10 <span className='imdb'>IMDb</span></p>
-                            <p>Duration: 120 MIN <span className='age'>18<span className='plus'>+</span></span></p>
+                            <p>Rating: {movieDataDetail.point?.toFixed(2)} <span className='imdb'>IMDb</span></p>
+                            <p>Duration: {movieDataDetail.duration} MINS &nbsp;
+                                {movieDataDetail.age !== '0' && <span className='age'>{movieDataDetail.age}<span className='plus'>+</span></span>}
+                            </p>
                             <p>Directors: Updating</p>
                             <p>Categories: Updating</p>
                         </div>

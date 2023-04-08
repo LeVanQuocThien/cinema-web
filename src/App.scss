@@ -44,3 +44,22 @@ select {
 button:hover {
     cursor: pointer;
 }
+
+@keyframes ZoomOut {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes ShowDown {
+    from {
+        transform-origin: top;
+        transform: scaleY(0);
+    }
+    to {
+        transform-origin: top;
+        transform: scaleY(1);
+    }
+}

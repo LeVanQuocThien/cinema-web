@@ -22,10 +22,12 @@ export default function LeftWrap() {
         let id = RunSlide()
         wrapRef.current.addEventListener('mouseover', () => clearInterval(id))
         wrapRef.current.addEventListener('mouseout', () => { id = RunSlide() })
+
+        return () => clearInterval(id)
     }, [])
 
     return (
-        <div className='leftWrap'>
+        <div className={`leftWrap`}>
             <div className='trendWrap'>
 
                 <div className='listTrend' ref={wrapRef}>

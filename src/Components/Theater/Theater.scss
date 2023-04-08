@@ -1,6 +1,7 @@
 .theater {
     height: 100%;
     .nameAndTime {
+        animation: ShowDown 0.25s ease;
         height: 80px;
         padding: 0 20px;
         display: flex;
@@ -16,6 +17,7 @@
         }
     }
     .movieList {
+        animation: ShowDown 0.25s ease;
         height: calc(100% - 80px);
         padding: 5px;
         overflow-y: scroll;

@@ -20,12 +20,27 @@
             justify-content: center;
             .movieBanner {
                 width: 25%;
+                position: relative;
                 .banner {
                     padding-top: 150%;
-                    background-color: red;
                     background-size: cover;
                     background-position: center;
                     border-radius: 10px;
+                }
+                .btnTrailer {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 12px;
+                    background: salmon;
+                    border-radius: 100%;
+                    box-shadow: 0 0 6px 0 white;
+                    font-size: 32px;
+                    cursor: pointer;
                 }
             }
             .info {

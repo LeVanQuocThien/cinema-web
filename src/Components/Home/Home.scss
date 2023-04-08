@@ -2,6 +2,7 @@
     height: 100%;
     width: 100%;
     position: relative;
+    animation: ZoomOut 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     .category {
         text-align: center;
         button {
@@ -79,20 +80,35 @@
                 }
                 .actionWrap {
                     margin-top: 30px;
-                    .trailer,
+                    display: flex;
+                    align-items: center;
                     .bookTicket {
                         font-size: 20px;
-                        padding: 8px 12px;
+                        padding: 12px 12px;
                         color: white;
                         font-weight: bold;
                         border-radius: 4px;
+                        background: #473c8b;
+                        margin-left: 20px;
+                        transition: all 0.2s linear;
+                        &:hover {
+                            box-shadow: 0 0 8px white;
+                            background: #655ba5;
+                        }
                     }
                     .trailer {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 12px;
+                        border-radius: 100%;
                         background: salmon;
-                    }
-                    .bookTicket {
-                        background: #473c8b;
-                        margin-left: 10px;
+                        font-size: 32px;
+                        color: white;
+                        transition: all 0.2s linear;
+                        &:hover {
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }

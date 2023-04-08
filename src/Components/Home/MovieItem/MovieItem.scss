@@ -5,7 +5,8 @@
     .item {
         height: 100%;
         border-radius: 6px;
-        background-size: 100%;
+        background-size: cover;
+        background-position: center;
         transition: 0.2s linear all;
         transform-origin: bottom;
         &:hover {
