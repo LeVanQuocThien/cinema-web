@@ -1,9 +1,10 @@
 const initialState = {
     currentUser: undefined,
-    bankAcc: [],
+    allUser: undefined,
     ticketLs: [],
     ticketDetail: {},
-    allUser: undefined,
+    bankName: [],
+    bankAcc: [],
     allBankCard: [],
     cardSelected: ''
 }
@@ -23,6 +24,11 @@ const rdcUser = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 allBankCard: payload
+            }
+        case 'SET_BANK_NAME':
+            return {
+                ...state,
+                bankName: payload
             }
         case 'SET_BANK_ACCOUNT':
             return {

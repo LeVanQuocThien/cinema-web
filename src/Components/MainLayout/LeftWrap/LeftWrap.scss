@@ -44,6 +44,13 @@
                 top: 50%;
                 padding: 6px;
                 transition: all 0.7s ease;
+                .trendItem {
+                    padding-top: 150%;
+                    border-radius: 12px;
+                    box-shadow: 0 0 6px 0 white;
+                    background-size: 100%;
+                    background-position: center;
+                }
             }
             .item1 {
                 transform: translate3d(0, -50%, 0);

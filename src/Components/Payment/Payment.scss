@@ -168,6 +168,20 @@
                     flex-wrap: wrap;
                     justify-content: space-between;
                     padding: 20px;
+                    .bankName {
+                        display: flex;
+                        justify-content: space-around;
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                        .radioBox {
+                            label {
+                                cursor: pointer;
+                            }
+                            input:checked ~ label {
+                                color: hotpink;
+                            }
+                        }
+                    }
                     .w46 {
                         width: 46%;
                     }

@@ -1,6 +1,5 @@
 
 import React, { useEffect, useRef, useState } from 'react'
-import TrendItem from './TrendItem/TrendItem'
 import { useSelector } from 'react-redux'
 import './LeftWrap.scss'
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md'
@@ -49,7 +48,7 @@ export default function LeftWrap() {
                     </div>
                     {movieShowing.map((e, i) => {
                         return <div key={i} className={`itemSwipe ${classList[i]}`}>
-                            <TrendItem {...e} />
+                            <div className='trendItem' style={{ backgroundImage: `url(${e.imagePortrait})` }}></div>
                         </div>
                     })}
 

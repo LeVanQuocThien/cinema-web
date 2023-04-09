@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 import './Payment.scss'
@@ -9,8 +9,10 @@ import PayCard from '../CommonComponents/PayCard/PayCard'
 export default function Payment() {
     const { timeShowID } = useParams()
     const nav = useNavigate()
+    const dispatch = useDispatch()
     const ticket = useSelector(state => state.ticketManage)
     const bankAcc = useSelector(state => state.userManage.bankAcc)
+    const bankName = useSelector(state => state.userManage.bankName)
     const currentUser = useSelector(state => state.userManage.currentUser)
     const [card, setCard] = useState({})
     const [cardSelect, setCardSelect] = useState({
@@ -61,9 +63,18 @@ export default function Payment() {
             setIsShow(true)
         } else {
             PostAPIBuy(cardSelect);
-            console.log(cardSelect);
         }
     }
+
+    useEffect(() => {
+        dispatch({
+            type: 'GET_API',
+            payload: {
+                link: `https://teachingserver.org/U2FsdGVkX19vV1e+G2Dt1h63IVituNJD+GdHSpis9+rOtKy+FbHJqg==/Bank/Bank`,
+                type: 'SET_BANK_NAME'
+            }
+        })
+    }, [])
     return (
         <>
             <div className='payment'>
@@ -130,7 +141,20 @@ export default function Payment() {
                             <button onClick={() => { setIsShow(false) }} className='close'>X</button>
                             <h1>Add new card </h1>
                             <div className='inputWrapper'>
-                                <input className='w100' name='BankId' onChange={(event) => { HandleInputCard(event) }} placeholder='Bank ID' />
+                                <div className='bankName w100'>
+                                    {bankName.map((e, i) => {
+                                        return <div key={i} className='radioBox'>
+                                            <input
+                                                type={'radio'} name='BankId'
+                                                id={e.Id} value={e.Id}
+                                                onChange={(event) => { HandleInputCard(event) }}
+                                                checked={card.BankId * 1 === e.Id}
+                                                hidden
+                                            />
+                                            <label htmlFor={e.Id}>{e.Name}</label>
+                                        </div>
+                                    })}
+                                </div>
                                 <input className='w100' name='CardNumber' onChange={(event) => { HandleInputCard(event) }} placeholder='Card number' />
                                 <input className='w100' name='CardName' onChange={(event) => { HandleInputCard(event) }} placeholder='Card name' />
                                 <input className='w46' name='ExpireDate' onChange={(event) => { HandleInputCard(event) }} placeholder='Expire date' />
@@ -140,7 +164,7 @@ export default function Payment() {
                         </div>}
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
