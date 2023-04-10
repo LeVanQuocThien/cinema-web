@@ -1,0 +1,8 @@
+.successPopup {
+    text-align: center;
+    animation: ZoomOut 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    .icon {
+        font-size: 180px;
+        margin-bottom: 32px;
+    }
+}

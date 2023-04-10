@@ -5,6 +5,7 @@ import Register from '../Register/Register'
 import { useDispatch, useSelector } from 'react-redux'
 import TicketDetail from '../TicketDetail/TicketDetail'
 import Trailer from '../Trailer/Trailer'
+import SuccessPopup from '../CommonComponents/SuccessPopup/SuccessPopup'
 
 export default function Popup() {
     const dispatch = useDispatch()
@@ -19,7 +20,7 @@ export default function Popup() {
             {popupManage.screen === 'register' && <Register />}
             {popupManage.screen === 'ticketDetail' && <TicketDetail />}
             {popupManage.screen === 'trailer' && <Trailer />}
-
+            {popupManage.screen === 'success' && <SuccessPopup />}
         </div>
     )
 }

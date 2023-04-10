@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Login.scss'
 import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi'
 import { useDispatch } from 'react-redux'
 
 export default function Login() {
+
+    const messRef = useRef(), loginRef = useRef()
     const dispatch = useDispatch()
     const [user, setUser] = useState({
         Email: "",
         Password: ""
     })
+    //======= Show wrong message =============
+    const [timeShow, setTimeShow] = useState()
+
     const HandleInput = (event) => {
         setUser({
             ...user,
@@ -31,14 +36,30 @@ export default function Login() {
                     payload: data
                 })
                 localStorage.setItem('userInfo', JSON.stringify(data))
-                dispatch({ type: 'DISAPPEAR' })
+                dispatch({ type: 'SET_SCREEN', payload: 'success' })
             })
             .catch(() => {
-                alert('Please check your account again')
+                loginRef.current.classList.add('wrongInput');
+                setTimeout(() => {
+                    loginRef.current.classList.remove('wrongInput');
+                }, 200)
+                //======== reset time show message =========
+                setTimeShow(prev => {
+                    clearTimeout(prev)
+                    return setTimeout(() => {
+                        messRef.current.style.animation = 'fadeOut 0.4s linear'
+                        setTimeout(() => {
+                            setTimeShow(undefined)
+                        }, 350)
+                    }, 1800)
+                })
+
             })
     }
+
     return (
         <div className='login'>
+            {console.log(1111)}
             <h1>Login</h1>
             <div className='insertBox'>
                 <input onChange={HandleInput} name='Email' type={'text'} placeholder='Email' />
@@ -52,7 +73,10 @@ export default function Login() {
                 <input type={'checkbox'} />
                 <span>Remember password</span>
             </div>
-            <button onClick={HandleLogin}>Log in</button>
+            <div className='btnLogin'>
+                <button ref={loginRef} onClick={HandleLogin}>Log in</button>
+                {timeShow && <span ref={messRef}>Email or Password is not correct. Please check it again.</span>}
+            </div>
             <p>
                 Don't have account?
                 <span className='link' onClick={() => { dispatch({ type: 'SET_SCREEN', payload: "register" }) }}> Register</span>
