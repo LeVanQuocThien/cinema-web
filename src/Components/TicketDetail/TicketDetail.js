@@ -10,6 +10,7 @@ export default function TicketDetail() {
     }, [ticket])
 
     return (
+
         <div className='ticketDetail'>
             <div className='container'>
                 <header className='header'>
@@ -48,5 +49,6 @@ export default function TicketDetail() {
                 <p className='customer'>Customer: {ticket.Email}</p>
             </div>
         </div>
+
     )
 }

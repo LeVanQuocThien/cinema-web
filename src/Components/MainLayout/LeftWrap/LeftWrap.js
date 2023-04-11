@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './LeftWrap.scss'
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 export default function LeftWrap() {
     const nav = useNavigate()
     const wrapRef = useRef()
+    const dispatch = useDispatch()
     const movieShowing = useSelector(state => state.movieManage.movieShowing?.sort((a, b) => b.views - a.views).slice(0, 5))
     const [classList, setClassList] = useState(['item1', 'item2', 'item3', 'item4', 'item5'])
 
@@ -52,9 +53,8 @@ export default function LeftWrap() {
                         return <div key={i} className={`itemSwipe ${classList[i]}`}>
                             <div
                                 className='trendItem' style={{ backgroundImage: `url(${e.imagePortrait})` }}
-                                onClick={() => nav(`/movie/${e.id}`)}
+                                onClick={() => { dispatch({ type: 'RESET_MOVIE_DETAIL' }); nav(`/movie/${e.id}`) }}
                             >
-
                             </div>
                         </div>
                     })}

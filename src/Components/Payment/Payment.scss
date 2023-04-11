@@ -151,6 +151,12 @@
                     display: flex;
                     justify-content: space-between;
                     flex-wrap: wrap;
+                    .noCard {
+                        padding: 12px 0;
+                        font-size: 24px;
+                        color: black;
+                        font-style: italic;
+                    }
                     .activeCard {
                         background: white;
                     }

@@ -50,7 +50,6 @@ export default function MovieDetail() {
             }
         })
     }, [movieID, dispatch])
-
     useEffect(() => {
         let newSessionLs = []
         movieDataCinemaLs.forEach(e => {
@@ -63,6 +62,7 @@ export default function MovieDetail() {
         setSessions(temp)
         setSess(temp[0])
     }, [movieDataCinemaLs])
+
     return (
         <MainLayout>
             {movieDataDetail.id ?

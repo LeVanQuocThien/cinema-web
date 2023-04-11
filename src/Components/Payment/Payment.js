@@ -132,28 +132,29 @@ export default function Payment() {
                     <div className='methodBox'>
                         <p className='titleMethod'>Visa/Master Card:</p>
                         <div className='cardList'>
-                            {bankAcc.map((bank, i) => {
-                                return <div
-                                    key={i}
-                                    onClick={() => {
-                                        setCardSelect(prev => ({
-                                            CardNumber: prev.CardNumber === bank.CardNumber ? '' : bank.CardNumber
-                                        }))
-                                    }}
-                                    className={`cardItem ${cardSelect.CardNumber === bank.CardNumber ? 'activeCard' : ''}`}
-                                >
-                                    <PayCard {...bank} />
-                                </div>
-                            })}
+                            {!bankAcc.length ?
+                                <h3 className='noCard'>There is no card before.</h3>
+                                :
+                                bankAcc.map((bank, i) => {
+                                    return <div
+                                        key={i}
+                                        onClick={() => {
+                                            setCardSelect(prev => ({
+                                                CardNumber: prev.CardNumber === bank.CardNumber ? '' : bank.CardNumber
+                                            }))
+                                        }}
+                                        className={`cardItem ${cardSelect.CardNumber === bank.CardNumber ? 'activeCard' : ''}`}
+                                    >
+                                        <PayCard {...bank} />
+                                    </div>
+                                })}
                         </div>
-
                     </div>
                     <div className='methodBox'>
                         <p className='titleMethod'>Tinder:</p>
                         <div className='cardList'>
                             <p className='alert'>We are improving. It's coming soon !!</p>
                         </div>
-                        <button onClick={() => setIsShowLoadingBox(true)}>test</button>
                     </div>
                 </div>
                 <div className='payForTicket'>

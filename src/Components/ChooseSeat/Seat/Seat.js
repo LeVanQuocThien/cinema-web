@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { GetSeatLayout } from '../../../CommonFunction/common';
-import './Seat.scss'
 import SeatItem from './SeatItem/SeatItem';
+import { MdChair } from 'react-icons/md'
+import './Seat.scss'
 
 export default function Seat({ data }) {
     const ticket = useSelector(state => state.ticketManage)
@@ -31,7 +32,22 @@ export default function Seat({ data }) {
     return (
         <div className='seat'>
             <h1 className='screen'>{ticket.filmName}</h1>
+
             <div className='seatWrapper'>
+                <div className='categories'>
+                    <div >
+                        <MdChair className='blankSeat' />
+                        <span>is blank</span>
+                    </div>
+                    <div >
+                        <MdChair className='bookingSeat' />
+                        <span>is booking</span>
+                    </div>
+                    <div >
+                        <MdChair className='boughtSeat' />
+                        <span>is bought</span>
+                    </div>
+                </div>
                 <div className='standardSeat'>
                     {standardSeat.map((row, i) => {
                         return <div key={i} className='row'>

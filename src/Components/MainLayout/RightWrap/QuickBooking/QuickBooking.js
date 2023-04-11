@@ -9,6 +9,8 @@ export default function QuickBooking() {
     const allMovieLs = useSelector(state => state.movieManage.movieShowing)
     const allCinemaLs = useSelector(state => state.allCinemaManage.cinemaLs)
     const detail = useSelector(state => state.movieDetailManage)
+    const ticketLs = useSelector(state => state.ticketManage)
+    const user = useSelector(state => state.userManage.currentUser)
     const [movieSelected, setMovieSelected] = useState('')
     const [dates, setDates] = useState([])
     const [dateSelected, setDateSelected] = useState('')
@@ -60,12 +62,19 @@ export default function QuickBooking() {
         setSessions(sessionLs)
     }
     const HandleNext = () => {
+        if (!user) {
+            alert('You gotta sign in to use this feature')
+            return
+        }
         if (time) {
             let newSess = sessions.filter(e => e.id === time).map(e => ({
                 theaterName: e.screenName,
                 showTime: e.sessionBusinessDate.split('T')[0] + `T${e.showTime}Z`,
                 session: e.id,
             }))[0]
+            if (newSess.session !== ticketLs.session) {
+                dispatch({ type: 'RESET_CHOICE' })
+            }
             for (let key in newSess) {
                 dispatch({
                     type: "SET_MORE_INFO",
