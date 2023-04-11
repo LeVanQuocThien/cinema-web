@@ -59,7 +59,6 @@ export default function Login() {
 
     return (
         <div className='login'>
-            {console.log(1111)}
             <h1>Login</h1>
             <div className='insertBox'>
                 <input onChange={HandleInput} name='Email' type={'text'} placeholder='Email' />

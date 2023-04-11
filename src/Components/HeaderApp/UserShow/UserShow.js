@@ -43,7 +43,7 @@ export default function UserShow() {
             <p>Hi, {userInfo?.Name}!</p>
             <div className='ticketList'>
                 <FaTicketAlt className='icon' />
-                <div className='TicketCounter'>{ticketLs.length}</div>
+                {!!ticketLs.length && <div className='TicketCounter'>{ticketLs.length}</div>}
                 <div className='more'>
                     <ul className='moreContain'>
                         {!ticketLs.length ?

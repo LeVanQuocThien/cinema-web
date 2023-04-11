@@ -7,6 +7,7 @@ import { FaChevronDown } from 'react-icons/fa'
 import { BsFillPlayFill } from 'react-icons/bs'
 import './MovieDetail.scss'
 import CinemaBox from './CinemaBox/CinemaBox'
+import { Loading } from '../CommonComponents/Image/Image'
 
 export default function MovieDetail() {
     let { movieID } = useParams()
@@ -64,57 +65,63 @@ export default function MovieDetail() {
     }, [movieDataCinemaLs])
     return (
         <MainLayout>
-            <div className='movieDetail'>
-                <section className='overview'>
-                    <div className='movieInfo'>
-                        <div className='movieBanner'>
-                            <div className='banner' style={{ backgroundImage: `url(${movieDataDetail.imagePortrait})` }}></div>
-                            <div className='btnTrailer' onClick={() => dispatch({ type: 'SET_SCREEN', payload: 'trailer' })}>
-                                <BsFillPlayFill />
+            {movieDataDetail.id ?
+                <div className='movieDetail'>
+                    <section className='overview'>
+                        <div className='movieInfo'>
+                            <div className='movieBanner'>
+                                <div className='banner' style={{ backgroundImage: `url(${movieDataDetail.imagePortrait})` }}></div>
+                                <div className='btnTrailer' onClick={() => dispatch({ type: 'SET_SCREEN', payload: 'trailer' })}>
+                                    <BsFillPlayFill />
+                                </div>
+                            </div>
+                            <div className='info'>
+                                <h1 className='name'>{movieDataDetail.name}</h1>
+                                <h1 className='subName'>{movieDataDetail.subName}</h1>
+                                <p>Rating: {movieDataDetail.point?.toFixed(2)} <span className='imdb'>IMDb</span></p>
+                                <p>Duration: {movieDataDetail.duration} MINS &nbsp;
+                                    {movieDataDetail.age !== '0' && <span className='age'>{movieDataDetail.age}<span className='plus'>+</span></span>}
+                                </p>
+                                <p>Directors: Updating</p>
+                                <p>Categories: Updating</p>
                             </div>
                         </div>
-                        <div className='info'>
-                            <h1 className='name'>{movieDataDetail.name}</h1>
-                            <h1 className='subName'>{movieDataDetail.subName}</h1>
-                            <p>Rating: {movieDataDetail.point?.toFixed(2)} <span className='imdb'>IMDb</span></p>
-                            <p>Duration: {movieDataDetail.duration} MINS &nbsp;
-                                {movieDataDetail.age !== '0' && <span className='age'>{movieDataDetail.age}<span className='plus'>+</span></span>}
-                            </p>
-                            <p>Directors: Updating</p>
-                            <p>Categories: Updating</p>
+                        <p className='movieDescription' dangerouslySetInnerHTML={{ __html: formatText(movieDataDetail.description) }}></p>
+                        <div className='intruction'>
+                            <p>Showtimes</p>
+                            <FaChevronDown className='moveAni' />
                         </div>
-                    </div>
-                    <p className='movieDescription' dangerouslySetInnerHTML={{ __html: formatText(movieDataDetail.description) }}></p>
-                    <div className='intruction'>
-                        <p>Showtimes</p>
-                        <FaChevronDown className='moveAni' />
-                    </div>
-                </section>
-                <section className='movieShowTime'>
-                    <div className='selectWrap'>
-                        <div className='selectBox'>
-                            <select onChange={HandleChangeCity}>
-                                <option value={''}>All of city</option>
-                                {movieDataCityLs.map((city, i) => {
-                                    return <option key={i} value={city.id}>{city.name}</option>
-                                })}
-                            </select>
+                    </section>
+                    <section className='movieShowTime'>
+                        <div className='selectWrap'>
+                            <div className='selectBox'>
+                                <select onChange={HandleChangeCity}>
+                                    <option value={''}>All of city</option>
+                                    {movieDataCityLs.map((city, i) => {
+                                        return <option key={i} value={city.id}>{city.name}</option>
+                                    })}
+                                </select>
+                            </div>
+                            <div className='selectBox'>
+                                <select onChange={(e) => { setSess(e.target.value) }}>
+                                    {sessions.map((session, i) => {
+                                        return <option key={i} value={session}>{session}</option>
+                                    })}
+                                </select>
+                            </div>
                         </div>
-                        <div className='selectBox'>
-                            <select onChange={(e) => { setSess(e.target.value) }}>
-                                {sessions.map((session, i) => {
-                                    return <option key={i} value={session}>{session}</option>
-                                })}
-                            </select>
+                        <div className='cinemaWrap'>
+                            {cinemaLs.map((cinema, i) => {
+                                return <CinemaBox key={i} {...cinema} sess={sess} />
+                            })}
                         </div>
-                    </div>
-                    <div className='cinemaWrap'>
-                        {cinemaLs.map((cinema, i) => {
-                            return <CinemaBox key={i} {...cinema} sess={sess} />
-                        })}
-                    </div>
-                </section>
-            </div>
+                    </section>
+                </div>
+                :
+                <div className='loadingMovie'>
+                    <Loading size={120} />
+                </div>
+            }
         </MainLayout>
     )
 }

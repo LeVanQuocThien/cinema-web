@@ -10,6 +10,7 @@ import Privite from '../Privite/Privite'
 
 export default function ChooseSeat() {
     const bookData = useSelector(state => state.seatPlantManage)
+    const session = useSelector(state => state.ticketManage.session)
     const dispatch = useDispatch()
     const { timeShowID } = useParams()
 

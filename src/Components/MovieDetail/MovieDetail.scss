@@ -18,6 +18,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
+            animation: moveToRight 0.5s ease;
             .movieBanner {
                 width: 25%;
                 position: relative;
@@ -65,6 +66,7 @@
             line-height: 22px;
             text-indent: 42px;
             position: relative;
+            animation: moveToLeft 0.5s ease;
             &::before {
                 position: absolute;
                 content: open-quote;
@@ -122,7 +124,12 @@
         }
     }
 }
-
+.loadingMovie {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @keyframes move {
     0% {
         transform: translateX(-10px);
@@ -132,5 +139,25 @@
     }
     100% {
         transform: translateX(-10px);
+    }
+}
+@keyframes moveToRight {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes moveToLeft {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }

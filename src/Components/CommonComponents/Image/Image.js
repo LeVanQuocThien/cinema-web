@@ -1,4 +1,6 @@
 import React from 'react'
+import { RiLoaderFill } from 'react-icons/ri'
+import './Image.scss'
 
 export const Logo = ({ width, height }) => {
     return (
@@ -20,5 +22,9 @@ export const ScanCode = ({ width, height }) => {
         />
     )
 }
-
+export const Loading = ({ size }) => {
+    return (
+        <RiLoaderFill fontSize={size} className='loadingImg' />
+    )
+}
 
