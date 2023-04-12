@@ -11,13 +11,11 @@ const rdcMovieDetail = (state = initialState, { type, payload }) => {
                 detail: payload
             }
         case 'SET_MOVIE_CINEMALS':
-            console.log(payload);
             return {
                 ...state,
                 cinemaLs: payload
             }
         case 'SET_SHOWTIME_MOVIELS':
-            console.log(payload);
             return {
                 ...state,
                 movieLs: payload

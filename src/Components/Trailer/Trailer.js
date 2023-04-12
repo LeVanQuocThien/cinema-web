@@ -10,7 +10,6 @@ export default function Trailer() {
     }, [])
     return (
         <div className='trailerBox'>
-            {console.log(idLink)}
             <iframe
                 className='video'
                 src={`https://www.youtube.com/embed/${idLink}?playlist=${idLink}&loop=1&rel=0&autoplay=1`}

@@ -38,7 +38,7 @@ export default function LsShowTime({ sessItem, jsonDispatch }) {
                 })
             }
             nav(`/chooseseat/${session.id}`)
-        } else { alert('dang nhap de') }
+        } else { dispatch({ type: 'SET_SCREEN', payload: 'signIn' }) }
     }
     return (
         <div className='lsShowTime'>

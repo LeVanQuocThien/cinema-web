@@ -15,7 +15,7 @@ export default function TicketItem(props) {
             <p className='cinemaName'>{props.CinemaName}</p>
             <p className='showTime'>
                 <span>{dateTime[0].split('-').reverse().join('/')}</span>
-                <span>{dateTime[1].substr(0, 5)}</span>
+                <span>{dateTime[1].substring(0, 5)}</span>
             </p>
         </div>
     )

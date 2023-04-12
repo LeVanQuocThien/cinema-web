@@ -34,12 +34,12 @@ export default function ChooseSeat() {
         <Privite>
             <div className='chooseSeat'>
                 <HeaderApp />
-                <div className='container'>
-                    <Seat
-                        data={bookData?.seatPlan?.seatLayoutData.areas}
-                    />
-                    <TicketCombo {...bookData} />
-                </div>
+                {bookData.seatPlan &&
+                    <div className='container'>
+                        <Seat data={bookData?.seatPlan?.seatLayoutData.areas} />
+                        <TicketCombo {...bookData} />
+                    </div>
+                }
                 <Outlet></Outlet>
             </div>
         </Privite>

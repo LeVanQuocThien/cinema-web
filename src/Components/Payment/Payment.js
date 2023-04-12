@@ -50,6 +50,7 @@ export default function Payment() {
             .then(res => {
                 if (res.status === 200) {
                     setSuccess('success')
+                    dispatch({ type: 'RESET_CHOICE' })
                 } else {
                     setSuccess('fail')
                 }
@@ -113,8 +114,8 @@ export default function Payment() {
                             <p>Combo: {Object.keys(ticket.comboLs).filter(e => ticket.comboLs[e] !== '0').map(com => `${com} x${ticket.comboLs[com]}`).join(' ')}</p>
                         </div>
                         <div className='group half'>
-                            <p>Date: {ticket.showTime.substr(0, 10).split('-').reverse().join('/')}</p>
-                            <p>Session: {ticket.showTime.substr(11, 5)} <span>{ticket.theaterName}</span></p>
+                            <p>Date: {ticket.showTime.substring(0, 10).split('-').reverse().join('/')}</p>
+                            <p>Session: {ticket.showTime.substring(11, 5)} <span>{ticket.theaterName}</span></p>
                         </div>
                     </div>
                 </div>

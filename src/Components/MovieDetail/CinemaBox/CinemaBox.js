@@ -5,7 +5,7 @@ export default function CinemaBox(props) {
     return (
         props.dates.some(e => e.showDate.includes(props.sess)) &&
         <div className='cinemaBox'>
-            <div className='cenimaItem'>
+            <div className='cinemaItem'>
                 <h1 className='cinemaName'>{props.name}</h1>
                 <div className='timeBox'>
                     <LsShowTime

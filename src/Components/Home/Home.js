@@ -41,7 +41,7 @@ export default function Home() {
 
     return (
         <MainLayout>
-            {movieList.movieShowing.length && <div className='home'>
+            {!!movieList.movieShowing.length && <div className='home'>
                 {/* ====== Change category ===== */}
                 <div className='category'>
                     <button

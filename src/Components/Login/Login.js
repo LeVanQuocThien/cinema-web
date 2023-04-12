@@ -73,7 +73,7 @@ export default function Login() {
                 <span>Remember password</span>
             </div>
             <div className='btnLogin'>
-                <button ref={loginRef} onClick={HandleLogin}>Log in</button>
+                <button ref={loginRef} onClick={HandleLogin}>Done</button>
                 {timeShow && <span ref={messRef}>Email or Password is not correct. Please check it again.</span>}
             </div>
             <p>

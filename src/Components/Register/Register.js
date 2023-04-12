@@ -53,7 +53,6 @@ export default function Register() {
                 continue
             }
         }
-
         if (isValid) {
             fetch(`https://teachingserver.org/U2FsdGVkX19vV1e+G2Dt1h63IVituNJD+GdHSpis9+rOtKy+FbHJqg==/user/user`, {
                 headers: {
@@ -72,7 +71,7 @@ export default function Register() {
                         }
                         localStorage.setItem('userInfo', JSON.stringify(data))
                         dispatch({ type: 'SET_CURRENT_USER', payload: data })
-                        dispatch({ type: 'DISAPPEAR' })
+                        dispatch({ type: 'SET_SCREEN', payload: 'success' })
 
                     } else { alert('Please try again') }
                 })
@@ -115,7 +114,7 @@ export default function Register() {
                 <input name='' type={'checkbox'} />
                 <span>I accept <span className='terms'>Terms of use</span></span>
             </div>
-            <button onClick={HandleRegister}>Register</button>
+            <button onClick={HandleRegister}>Done</button>
             <p>
                 Already have account?
                 <span className='link' onClick={() => { dispatch({ type: 'SET_SCREEN', payload: "signIn" }) }}> Sign in</span>

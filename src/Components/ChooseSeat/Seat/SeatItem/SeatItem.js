@@ -53,7 +53,6 @@ export default function SeatItem({ type, seatCode, typeSeat }) {
                         onClick={handleCount}
                         className={clsx({
                             'show': isShow,
-                            // 'disabled': bookedSeat.includes(seatCode)
                         })}
                         disabled={bookedSeat.match(/[A-Z][0-9]+/g)?.includes(seatCode)}
                     >

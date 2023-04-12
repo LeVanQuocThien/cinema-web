@@ -111,19 +111,19 @@ export default function QuickBooking() {
             <h3>Booking Now!</h3>
             <div className='selectWrapper'>
                 <select onChange={HandleSelectCinema}>
-                    <option hidden value={''}>--Cinema--</option>
+                    <option hidden value={''}>-- Cinema --</option>
                     {allCinemaLs?.map((cinema, i) => <option key={i} value={cinema.code}>{cinema.name}</option>)}
                 </select>
                 <select onChange={HandleSelectMovie}>
-                    <option hidden value={''}>--Movie--</option>
+                    <option hidden value={''}>-- Movie --</option>
                     {allMovieLs?.map((movie, i) => <option key={i} value={movie.id}>{movie.name}</option>)}
                 </select>
                 <select value={dateSelected} onChange={HandleSelectDate}>
-                    <option hidden value={''}>--Date--</option>
+                    <option hidden value={''}>-- Date --</option>
                     {dates.map((e, i) => <option key={i} value={e.showDate}>{e.showDate}</option>)}
                 </select>
                 <select value={time} onChange={(event) => { setTime(event.target.value) }}>
-                    <option hidden value={''}>--Show timme--</option>
+                    <option hidden value={''}>-- Show time --</option>
                     {sessions.map((e, i) => <option key={i} value={e.id}>{e.showTime}</option>)}
                 </select>
             </div>

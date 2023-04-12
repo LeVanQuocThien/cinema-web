@@ -23,7 +23,6 @@ export default function TicketCombo({ ticket, consession }) {
     }
     return (
         <div className='ticketCombo'>
-            {console.log(isMoreOneSeat)}
             <h2 className='cinemaName'>{ticketManage.cinemaName}</h2>
             <div className='wrapper'>
                 <div className='priceWrapper'>

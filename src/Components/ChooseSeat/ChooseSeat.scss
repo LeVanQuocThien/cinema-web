@@ -10,5 +10,14 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        animation: showUp 0.5s linear;
+    }
+}
+@keyframes showUp {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

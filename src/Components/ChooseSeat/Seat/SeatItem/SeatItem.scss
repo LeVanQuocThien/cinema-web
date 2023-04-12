@@ -30,28 +30,23 @@
             font-size: 32px;
         }
         .show {
-            color: palevioletred;
+            color: hotpink;
+
             .seatCode {
                 display: block;
             }
         }
-        // .disabled {
-        //     color: red;
-        //     cursor: no-drop;
-        //     .seatCode {
-        //         display: none;
-        //     }
-        // }
     }
     .seatCode {
         position: absolute;
         display: none;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-45%, -40%);
         color: white;
-        font-size: 12px;
+        font-size: 13px;
         font-weight: bold;
+        text-shadow: 0 0 3px black;
     }
 }
 .couple {
