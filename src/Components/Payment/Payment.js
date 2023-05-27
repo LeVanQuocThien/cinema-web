@@ -103,7 +103,7 @@ export default function Payment() {
                 <h1>Your vouchers</h1>
             </div>
             <div className='containPayment'>
-                <h1>Check your choice !</h1>
+                <h1>Checking your choice !</h1>
                 <div className='bannerBill'>
                     <div className='img' style={{ backgroundImage: `url(${ticket.imageLandscape})` }}></div>
                     <div className='infoBill'>
@@ -152,12 +152,13 @@ export default function Payment() {
                         </div>
                     </div>
                     <div className='methodBox'>
-                        <p className='titleMethod'>Tinder:</p>
+                        <p className='titleMethod'>Other method:</p>
                         <div className='cardList'>
                             <p className='alert'>We are improving. It's coming soon !!</p>
                         </div>
                     </div>
                 </div>
+                {/* ====================== Payment Form ========================= */}
                 <div className='payForTicket'>
                     <button onClick={HandleBuy} className='button'>Pay for ticket</button>
                     {isShowAddCardBox && <div className='newCard'>

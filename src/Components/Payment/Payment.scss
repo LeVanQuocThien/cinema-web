@@ -55,7 +55,7 @@
         border-radius: 12px;
         box-shadow: 0 0 4px 0 salmon;
         h1 {
-            padding: 20px;
+            padding: 20px 20px 32px 20px;
             text-align: center;
         }
         .bannerBill {
@@ -132,6 +132,8 @@
             font-size: 36px;
             text-align: center;
         }
+    }
+    .vouchers > div {
     }
     .chooseBankCard {
         display: flex;

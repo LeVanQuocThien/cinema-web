@@ -37,15 +37,15 @@ export default function Seat({ data }) {
                 <div className='categories'>
                     <div >
                         <MdChair className='blankSeat' />
-                        <span>is blank</span>
+                        <span>Blank</span>
                     </div>
                     <div >
                         <MdChair className='bookingSeat' />
-                        <span>is booking</span>
+                        <span>Choosing</span>
                     </div>
                     <div >
                         <MdChair className='boughtSeat' />
-                        <span>is bought</span>
+                        <span>Bought</span>
                     </div>
                 </div>
                 <div className='standardSeat'>
