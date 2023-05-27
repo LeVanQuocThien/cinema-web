@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is Cenema website - a personal project with ReacJS.
+(Server was already exist)
 
-## Available Scripts
+# App Preview
+- **Home Page:**
 
-In the project directory, you can run:
+  ![HomePage](https://github.com/LeVanQuocThien/cinema-web/assets/130129690/55ac7193-a44f-465e-a86f-59135f4ee892)
 
-### `npm start`
+- **Sign in:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  ![Login](https://github.com/LeVanQuocThien/cinema-web/assets/130129690/c88e7e47-3240-40b4-9bf1-9530b6316667)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Movie and theater:**
 
-### `npm test`
+  ![Cinema](https://github.com/LeVanQuocThien/cinema-web/assets/130129690/be7a4ee8-a980-426b-8ccf-1524630e3590)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Booking seats and combo:**
 
-### `npm run build`
+  ![BookingSeats](https://github.com/LeVanQuocThien/cinema-web/assets/130129690/c4b54694-72c1-4207-8ec1-2cc645518cbe)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Payment:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ![Payment](https://github.com/LeVanQuocThien/cinema-web/assets/130129690/dbfce0ec-d790-4155-8e43-b7b182f25762)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Add new card:** (In case user click 'Pay for ticker' button without selected any card):
 
-### `npm run eject`
+  ![AddNewCard](https://github.com/LeVanQuocThien/cinema-web/assets/130129690/7a682c90-c1c3-4d81-afd2-e4669b720f4b)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#features
+- Register, sign in, sign out.
+- Search movie or cinema.
+- Follow movies are showing or cooming soon.
+- Buy the ticket.
+  - choose seat and combo.
+  - Pay for ticket.
+  - Create a new ticket in database.
