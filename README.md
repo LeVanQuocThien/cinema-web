@@ -28,7 +28,7 @@ This is Cenema website - a personal project with ReacJS.
 
   ![AddNewCard](https://github.com/LeVanQuocThien/cinema-web/assets/130129690/7a682c90-c1c3-4d81-afd2-e4669b720f4b)
 
-#features
+# features
 - Register, sign in, sign out.
 - Search movie or cinema.
 - Follow movies are showing or cooming soon.
